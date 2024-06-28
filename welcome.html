@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <style>
+      /* Global styles for the body */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Align items to the start of the cross axis */
+        justify-content: baseline; /* Align items along the baseline of the main axis */
+        margin: 10px; /* Set a small margin */
+        height: 100vh; /* Full viewport height */
+        background-color: #ffffff; /* White background */
+      }
+
+      /* Styles for the main heading */
+      h1,
+      h2 {
+        color: #000000; /* Black color for headings */
+        margin: 10px 0; /* Top and bottom margin */
+      }
+
+      /* Styles for the container holding images */
+      .images-container {
+        display: flex;
+        justify-content: space-around; /* Distribute items evenly with space around */
+        width: 100%; /* Full width of the viewport */
+        max-width: 100%; /* Ensure container does not exceed viewport width */
+        height: auto; /* Adjust height automatically */
+        max-height: 15vh; /* Limit height to 15% of the viewport height */
+        overflow: hidden; /* Hide overflow */
+        position: relative; /* Positioning context for children */
+      }
+
+      /* Styles for each individual image container */
+      .image-container {
+        width: 50%; /* Half width of the parent container */
+        height: 100%; /* Full height of the parent container */
+        overflow: hidden; /* Hide overflow */
+        position: relative; /* Positioning context for children */
+        margin: 0; /* Remove any default margins */
+      }
+
+      /* Styles for the images themselves */
+      .image-container img {
+        width: 100%; /* Full width of the container */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Ensure image is displayed as a block element */
+        margin: 0; /* Remove any default margins */
+      }
+
+      /* Styles for the container holding pages */
+      .pages-container {
+        width: 100%;
+        display: flex; /* Display headings side by side */
+        align-items: baseline; /* Align items along their baseline */
+        justify-content: space-evenly; /* Distribute items evenly */
+        margin-top: 0px; /* Example margin for spacing */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Container for the images -->
+    <div class="images-container">
+      <!-- Individual image containers -->
+      <div class="image-container">
+        <img src="./images/composition.jpg" alt="Description of the image" />
+      </div>
+      <div class="image-container">
+        <img src="./images/composition.jpg" alt="Description of the image" />
+      </div>
+    </div>
+
+    <h2>nicnikcevic.com</h2>
+
+    <div class="pages-container">
+      <!-- Pages content -->
+      <h2>instagram</h2>
+      <h2>cartoons</h2>
+      <h2>writing</h2>
+    </div>
+  </body>
+</html>
