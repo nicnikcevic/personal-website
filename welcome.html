@@ -64,22 +64,27 @@
       /* Styles for the main heading */
       h1 {
         color: #000000; /* White color for headings */
-        margin: 0; /* Remove default margin */
+        margin: 0;
+        margin-right: 10vh; /* Remove default margin */
+        margin-bottom: 0.7vh;
       }
 
       /* Styles for the container holding pages */
       .pages-container {
         width: 100%;
         display: flex; /* Display headings side by side */
-        justify-content: center; /* Center the pages */
         margin-top: 5px;
+        margin-right: 10vh;
+        justify-content: center;
+        align-content: center;
       }
 
       /* Styles for the pages buttons */
       .nav-button {
         color: #000000; /* White color for text */
         margin: 0 10px; /* Add margin to space out buttons */
-        justify-content: space-evenly;
+        width: 20vh;
+        justify-content: center;
         font-size: large;
         cursor: pointer; /* Change cursor to pointer */
         text-decoration: none; /* Remove default underline */
@@ -101,7 +106,7 @@
         height: 60vh; /* Container takes 60% of viewport height */
         gap: 10px;
         overflow: hidden; /* Ensure no overflow */
-        margin-top: 20vh; /* Add margin to prevent overlap with fixed header */
+        margin-top: 28vh; /* Add margin to prevent overlap with fixed header */
         margin-left: 10px;
         margin-right: 10px;
       }
