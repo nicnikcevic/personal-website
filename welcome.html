@@ -1,87 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Importing fonts from Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome</title>
     <style>
+      /************************ Standard Header Design **************************/
+
+      /* style show organized in code by order of appearance (top to bottom)
+      in website after general style which is declared in body */
+
       /* Global styles for the body */
       body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Align items to the start of the cross axis */
-        justify-content: baseline; /* Align items along the baseline of the main axis */
-        margin: 10px; /* Set a small margin */
-        height: 100vh; /* Full viewport height */
+        font-family: Roboto, sans-serif;
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
         background-color: #ffffff; /* White background */
       }
 
-      /* Styles for the main heading */
-      h1,
-      h2 {
-        color: #000000; /* Black color for headings */
-        margin: 10px 0; /* Top and bottom margin */
-      }
-
-      /* Styles for the container holding images */
-      .images-container {
+      /* style for the entire header, including my name, different pages, and composition picture*/
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px; /* Adjust the height as needed */
+        padding: 20px;
+        padding-bottom: 20vh;
+        background-color: white;
+        color: #fff;
         display: flex;
-        justify-content: space-around; /* Distribute items evenly with space around */
-        width: 100%; /* Full width of the viewport */
-        max-width: 100%; /* Ensure container does not exceed viewport width */
-        height: auto; /* Adjust height automatically */
-        max-height: 15vh; /* Limit height to 15% of the viewport height */
-        overflow: hidden; /* Hide overflow */
-        position: relative; /* Positioning context for children */
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 1000; /* Ensure the header stays on top */
+        text-align: center;
       }
 
-      /* Styles for each individual image container */
-      .image-container {
-        width: 50%; /* Half width of the parent container */
-        height: 100%; /* Full height of the parent container */
-        overflow: hidden; /* Hide overflow */
-        position: relative; /* Positioning context for children */
-        margin: 0; /* Remove any default margins */
+      .composition {
+        width: 100vw; /* Full width of the viewport */
+        height: 20vh; /* 20% of the viewport height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -22px;
+        margin-right: 60px;
+        margin-left: 20px
       }
 
-      /* Styles for the images themselves */
-      .image-container img {
-        width: 100%; /* Full width of the container */
-        height: auto; /* Maintain aspect ratio */
-        display: block; /* Ensure image is displayed as a block element */
-        margin: 0; /* Remove any default margins */
+      .composition img {
+        width: 49.2%; /* Ensure the image stretches across the container */
+        height: 80%; /* Ensure the image takes full height of the container */
+        object-fit: cover; /* Maintain aspect ratio and cover container */
+      }
+
+      /* Styles for the main heading */
+      h1 {
+        color: #000000; /* White color for headings */
+        margin: 0; /* Remove default margin */
       }
 
       /* Styles for the container holding pages */
       .pages-container {
         width: 100%;
         display: flex; /* Display headings side by side */
-        align-items: baseline; /* Align items along their baseline */
-        justify-content: space-evenly; /* Distribute items evenly */
-        margin-top: 0px; /* Example margin for spacing */
+        justify-content: center; /* Center the pages */
+        margin-top: 5px;
+      }
+
+      /* Styles for the pages buttons */
+      .nav-button {
+        color: #000000; /* White color for text */
+        margin: 0 10px; /* Add margin to space out buttons */
+        justify-content: space-evenly;
+        font-size: large;
+        cursor: pointer; /* Change cursor to pointer */
+        text-decoration: none; /* Remove default underline */
+        background-color: transparent; /* Transparent background initially */
+      }
+
+      /* style for when hovering over the pages buttons */
+      .nav-button:hover {
+        font-weight: 200;
+      }
+
+      /************************ End of Header Design **************************/
+
+      /* Styles for the personalPics container */
+      .personalPics-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60vh; /* Container takes 60% of viewport height */
+        gap: 10px;
+        overflow: hidden; /* Ensure no overflow */
+        margin-top: 20vh; /* Add margin to prevent overlap with fixed header */
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      .personalPics-container img {
+        max-height: 50vh;
+        height: auto; /* Maintain aspect ratio */
+        flex-grow: 1; /* Allow images to grow and shrink */
+      }
+
+      .extra-content {
+        height: 200vh; /* Extra content to make the page scrollable */
+        background-color: #f0f0f0;
       }
     </style>
   </head>
   <body>
-    <!-- Container for the images -->
-    <div class="images-container">
-      <!-- Individual image containers -->
-      <div class="image-container">
-        <img src="./images/composition.jpg" alt="Description of the image" />
+    <!-- wrapping the entire header in a class so it can remain fixed in scroll -->
+    <header>
+      <div class="composition">
+        <img src="./images/composition.jpg" />
+        <img src="./images/composition.jpg" />
       </div>
-      <div class="image-container">
-        <img src="./images/composition.jpg" alt="Description of the image" />
+
+      <!-- Main heading using the bold Roboto font -->
+      <h1>Nic Nikcevic</h1>
+
+      <div class="pages-container">
+        <!-- each page is a clickable button -->
+        <!-- when a tab is highlighted it becomes thin -->
+        <a href="#home" class="nav-button roboto-regular">Home</a>
+        <a href="#about" class="nav-button roboto-regular">About</a>
+        <a href="#writing" class="nav-button roboto-regular">Writing</a>
+        <a href="#coding" class="nav-button roboto-regular">Coding</a>
+        <a href="#cartoons" class="nav-button roboto-regular">Cartoons</a>
+        <a href="#random" class="nav-button roboto-regular">Random</a>
       </div>
+    </header>
+
+    <!-- Container for the personal pictures -->
+    <div class="personalPics-container">
+      <img src="./images/texas.jpg" alt="Texas" />
+      <img src="./images/tahoe.jpg" alt="Tahoe" />
+      <img src="./images/camping.jpg" alt="Camping" />
     </div>
 
-    <h2>nicnikcevic.com</h2>
-
-    <div class="pages-container">
-      <!-- Pages content -->
-      <h2>instagram</h2>
-      <h2>cartoons</h2>
-      <h2>writing</h2>
+    <div class="extra-content">
+      <!-- Add more content here to make the page scrollable -->
+      <p>Scroll down to see the fixed header in action.</p>
     </div>
+
+    <!-- JavaScript -->
+    <script>
+      // JavaScript here
+    </script>
   </body>
 </html>
