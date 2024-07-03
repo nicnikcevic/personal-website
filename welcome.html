@@ -52,7 +52,7 @@
         align-items: center;
         margin-top: -22px;
         margin-right: 60px;
-        margin-left: 20px
+        margin-left: 20px;
       }
 
       .composition img {
@@ -117,9 +117,72 @@
         flex-grow: 1; /* Allow images to grow and shrink */
       }
 
-      .extra-content {
-        height: 200vh; /* Extra content to make the page scrollable */
-        background-color: #f0f0f0;
+      .home-blurb p {
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 0px;
+      }
+
+      .about h2 {
+        margin-top: 5vh;
+        margin-right: 6vh;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .about p {
+        text-align: center;
+        margin: 10px;
+      }
+
+      .about h3 {
+        text-align: center;
+        margin-right: 4vh;
+        margin-bottom: auto;
+        margin-top: 5vh;
+      }
+
+      .about img {
+        margin-right: 10px;
+        margin-top: -8.5vh;
+        height: 40vh;
+        width: 40vh;
+      }
+
+      .about .currently {
+        display: flex;
+        margin-right: 15vh;
+        margin-left: 15vh;
+        padding-inline: 6vh;
+        gap: 10vh;
+        margin-bottom: -4vh;
+      }
+
+      .writing {
+        text-align: center;
+        margin-right: 4.8vh;
+      }
+
+      .image-button {
+      border: none; /* Remove default border */
+      padding: 0; /* Remove default padding */
+      background: none; /* Remove default background */
+      cursor: pointer; /* Change cursor to pointer */
+    }
+
+    .image-button img {
+      width: 50px; /* Adjust width as needed */
+      height: 50px; /* Adjust height as needed */
+    }
+
+    .image-button img:hover {
+      opacity: 0.8; /* Slightly reduce opacity on hover */
+    }
+
+      .writing p {
+        height: 200vh;
       }
     </style>
   </head>
@@ -153,14 +216,62 @@
       <img src="./images/camping.jpg" alt="Camping" />
     </div>
 
-    <div class="extra-content">
-      <!-- Add more content here to make the page scrollable -->
-      <p>Scroll down to see the fixed header in action.</p>
+    <div class="home-blurb">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+    </div>
+
+    <div class="about">
+      <h2>About</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+      <h3>currently...</h3>
+
+      <div class="currently">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <img src="./images/writers-house-logo.svg" alt="Writers House Logo" />
+      </div>
+    </div>
+
+    <div class="writing">
+      <h2>Writing</h2>
+      <h3><i>Things I'm Proud Of</i></h3>
+      <iframe id="charisma" src="./documents/charisma.pdf"></iframe>
+      <iframe src="./documents/greenkey.pdf"></iframe>
+      <iframe src="./documents/aspiring.pdf"></iframe>
+      <iframe src=""></iframe>
+      <iframe src=""></iframe>
+      <iframe src=""></iframe>
+      <p>extra</p>
     </div>
 
     <!-- JavaScript -->
     <script>
-      // JavaScript here
+       document.getElementById('charisma').addEventListener('click', function() {
+      window.open('./documents/charisma.pdf', '_blank');
+    });
     </script>
   </body>
 </html>
